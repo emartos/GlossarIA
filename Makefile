@@ -89,6 +89,8 @@ build-container: ## 🏗️ Builds the project inside container (used by docker-
 	@echo "📦 Installing dependencies..."
 	cd web && npm install
 	cd scripts && npm install
+	@echo "⚙️ Validating CSV and generating JSON..."
+	cd scripts && node validate-csv.js && node generate-json.js
 	@echo "🔨 Building web application..."
 	cd web && npm run build
 	@echo "✅ Project built successfully inside container"
