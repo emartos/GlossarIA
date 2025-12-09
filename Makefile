@@ -144,7 +144,8 @@ ifeq ($(DOCKER_SYNC_REQUIRED),true)
 	fi
 endif
 	@echo "⚙️ Generating JSON..."
-	docker compose -f $(COMPOSE_FILE) run --rm glossaria sh -c "cd scripts && node validate-csv.js && node generate-json.js"
+	docker compose -f docker-compose.yml exec glossaria \
+	  sh -c "cd scripts && node validate-csv.js && node generate-json.js"
 
 translate: ## 🌍 Executes translation (adapts to environment)
 	@echo "🌍 Executing translation in Docker..."
