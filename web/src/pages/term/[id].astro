@@ -1,0 +1,99 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import LangSwitcher from '../../components/LangSwitcher.astro';
+import { t } from '../../utils/translations';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+
+interface GlossaryEntry {
+  id: string;
+  section: string;
+  tags: string[];
+  level: string;
+  status: string;
+  term: string;
+  short: string;
+  long: string;
+  example?: string;
+}
+
+const { id } = Astro.params;
+const url = new URL(Astro.request.url);
+const lang = (url.searchParams.get('lang') ?? 'es') as 'es' | 'en';
+
+// Read the JSON file directly from the filesystem instead of making an HTTP request
+const jsonPath = join(process.cwd(), 'public', 'data', `glossary.${lang}.json`);
+const jsonContent = readFileSync(jsonPath, 'utf-8');
+const entries = JSON.parse(jsonContent) as GlossaryEntry[];
+
+const entry = entries.find((e) => e.id === id);
+
+if (!entry) {
+  throw Astro.redirect(`/?lang=${lang}`);
+}
+
+const levelLabel =
+  entry.level === 'basico'
+    ? t('levelBasic', lang)
+    : entry.level === 'intermedio'
+    ? t('levelIntermediate', lang)
+    : t('levelAdvanced', lang);
+---
+
+<Layout title={`GlossarIA · ${entry.term}`} lang={lang}>
+  <section style="margin-top:0.75rem;margin-bottom:1.5rem;">
+    <div style="display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;">
+      <div>
+        <a
+          href={`/?lang=${lang}`}
+          style="font-size:0.8rem;color:var(--muted);text-decoration:none;"
+        >
+          ← {t('backToGlossary', lang)}
+        </a>
+        <h1 style="margin:0.4rem 0 0.2rem;font-size:1.5rem;">{entry.term}</h1>
+        <p style="margin:0;color:var(--muted);font-size:0.9rem;">
+          {entry.short}
+        </p>
+      </div>
+      <LangSwitcher />
+    </div>
+
+    <div
+      style="margin-top:1rem;padding:1rem 1.1rem;border-radius:var(--radius-lg);background:var(--bg-alt);border:1px solid var(--border);box-shadow:var(--shadow-soft);"
+    >
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
+        <span
+          style="font-size:0.75rem;padding:0.15rem 0.55rem;border-radius:999px;border:1px solid rgba(93,214,255,0.7);background:var(--accent-soft);"
+        >
+          {levelLabel}
+        </span>
+        {entry.tags &&
+          entry.tags.map((tag) => (
+            <span
+              style="font-size:0.7rem;padding:0.1rem 0.5rem;border-radius:999px;border:1px solid rgba(255,255,255,0.12);color:var(--muted);"
+            >
+              {tag}
+            </span>
+          ))}
+      </div>
+
+      <h2 style="font-size:1rem;margin:0 0 0.35rem;">
+        {t('fullDefinition', lang)}
+      </h2>
+      <p style="margin:0 0 0.8rem;font-size:0.95rem;line-height:1.5;">
+        {entry.long}
+      </p>
+
+      {entry.example && (
+        <>
+          <h3 style="font-size:0.9rem;margin:0 0 0.3rem;">
+            {t('exampleInContext', lang)}
+          </h3>
+          <p style="margin:0;font-size:0.9rem;color:var(--muted);">
+            {entry.example}
+          </p>
+        </>
+      )}
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,20 @@
+services:
+  glossaria:
+    build: .
+    container_name: glossaria-app
+    ports:
+      - "4321:4321"
+    environment:
+      - NODE_ENV=production
+      - HOST=0.0.0.0
+      - PORT=4321
+    command: sh -c "cd web && node dist/server/entry.mjs"
+
+  glossaria-build:
+    build: .
+    container_name: glossaria-build
+    environment:
+      - NODE_ENV=production
+    command: sh -c "echo '🏗️ Building project inside container...' && echo '📦 Installing dependencies...' && cd web && npm install && cd ../scripts && npm install && echo '🔨 Building web application...' && cd ../web && npm run build && echo '✅ Project built successfully inside container'"
+    profiles:
+      - build

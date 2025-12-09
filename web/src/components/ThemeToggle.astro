@@ -1,0 +1,121 @@
+---
+import { t } from '../utils/translations';
+
+const { lang = 'es' } = Astro.props;
+---
+
+<div class="theme-toggle">
+  <button
+    type="button"
+    id="theme-toggle-btn"
+    class="theme-btn"
+    title={t('themeToggle', lang)}
+  >
+    <span class="theme-icon sun-icon">☀️</span>
+    <span class="theme-icon moon-icon">🌙</span>
+  </button>
+</div>
+
+<style>
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+  }
+
+  .theme-btn {
+    padding: 0.4rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  .theme-btn:hover {
+    border-color: rgba(93, 214, 255, 0.5);
+    background: rgba(93, 214, 255, 0.1);
+  }
+
+  .theme-icon {
+    position: absolute;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sun-icon {
+    opacity: 0;
+    transform: rotate(180deg) scale(0.5);
+  }
+
+  .moon-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+
+  /* Light theme styles */
+  :global([data-theme="light"]) .sun-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+
+  :global([data-theme="light"]) .moon-icon {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0.5);
+  }
+
+  :global([data-theme="light"]) .theme-btn {
+    color: var(--text);
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+
+  :global([data-theme="light"]) .theme-btn:hover {
+    border-color: rgba(93, 214, 255, 0.5);
+    background: rgba(93, 214, 255, 0.1);
+  }
+</style>
+
+<script>
+  function initTheme() {
+    // Get saved theme or default to 'dark'
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }
+
+  function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  }
+
+  // Initialize theme on page load
+  initTheme();
+
+  // Add event listener to toggle button
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('theme-toggle-btn');
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', toggleTheme);
+    }
+  });
+
+  // Handle theme initialization on navigation (for Astro's client-side routing)
+  document.addEventListener('astro:page-load', () => {
+    initTheme();
+    const toggleBtn = document.getElementById('theme-toggle-btn');
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', toggleTheme);
+    }
+  });
+</script>

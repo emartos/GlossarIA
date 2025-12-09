@@ -1,0 +1,69 @@
+name: Run Tests
+
+on:
+  pull_request:
+    paths:
+      - "scripts/**"
+      - "data/glossary.csv"
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/**"
+      - "data/glossary.csv"
+  workflow_dispatch:
+
+jobs:
+  test-scripts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install dependencies in scripts directory
+        run: |
+          cd scripts
+          npm ci
+
+      - name: Run validation tests
+        run: node scripts/test-validate.js
+
+      - name: Test CSV validation on actual data
+        run: node scripts/validate-csv.js
+
+      - name: Test JSON generation
+        run: |
+          node scripts/generate-json.js
+          # Check if JSON files were created
+          if [ ! -f "web/public/data/glossary.es.json" ]; then
+            echo "❌ Spanish JSON file was not generated"
+            exit 1
+          fi
+          if [ ! -f "web/public/data/glossary.en.json" ]; then
+            echo "❌ English JSON file was not generated"
+            exit 1
+          fi
+          echo "✅ JSON files generated successfully"
+
+      - name: Validate generated JSON files
+        run: |
+          # Basic JSON validation
+          node -e "
+            const fs = require('fs');
+            try {
+              const esData = JSON.parse(fs.readFileSync('web/public/data/glossary.es.json', 'utf8'));
+              const enData = JSON.parse(fs.readFileSync('web/public/data/glossary.en.json', 'utf8'));
+              console.log('✅ JSON files are valid');
+              console.log(\`📊 ES entries: \${esData.length}\`);
+              console.log(\`📊 EN entries: \${enData.length}\`);
+            } catch (error) {
+              console.error('❌ JSON validation failed:', error.message);
+              process.exit(1);
+            }
+          "

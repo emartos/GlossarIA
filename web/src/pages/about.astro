@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LangSwitcher from '../components/LangSwitcher.astro';
+
+const url = new URL(Astro.request.url);
+const lang = (url.searchParams.get('lang') ?? 'es') as 'es' | 'en';
+---
+
+<Layout title="GlossarIA · About" lang={lang}>
+  <section style="margin-top:0.75rem;">
+    <div style="display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;">
+      <h1 style="margin:0 0 0.6rem;font-size:1.5rem;">
+        {lang === 'es' ? 'Acerca de GlossarIA' : 'About GlossarIA'}
+      </h1>
+      <div style="display:flex;gap:0.75rem;align-items:center;">
+        <LangSwitcher />
+      </div>
+    </div>
+
+    <p style="color:var(--muted);font-size:0.95rem;max-width:620px;">
+      {lang === 'es'
+        ? 'GlossarIA es un glosario abierto y bilingüe de conceptos de IA, diseñado para equipos y empresas que buscan definiciones claras y ejemplos orientados al negocio.'
+        : 'GlossarIA is an open, bilingual glossary of AI concepts, designed for teams and companies that want clear definitions and business-oriented examples.'}
+    </p>
+
+    <p style="color:var(--muted);font-size:0.9rem;max-width:620px;">
+      {lang === 'es'
+        ? 'El glosario se mantiene a través de un CSV público en GitHub. Puedes proponer nuevos términos, corregir definiciones o traducciones, y ayudar a mantenerlo actualizado.'
+        : 'The glossary is maintained through a public CSV on GitHub. You can propose new terms, fix definitions or translations, and help keep it up to date.'}
+    </p>
+
+    <p style="color:var(--muted);font-size:0.85rem;max-width:620px;margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);">
+      {lang === 'es'
+        ? 'Esta iniciativa ha sido desarrollada por'
+        : 'This initiative has been developed by'} <a href="https://natiboo.es" target="_blank" rel="noopener" style="color:var(--accent);">Natiboo</a>.
+    </p>
+  </section>
+</Layout>

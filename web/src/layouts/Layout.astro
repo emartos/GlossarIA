@@ -1,0 +1,269 @@
+---
+import { t } from '../utils/translations';
+import ThemeToggle from '../components/ThemeToggle.astro';
+
+const { title = 'GlossarIA', lang = 'en' } = Astro.props;
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Prevent FOUC by applying theme immediately -->
+    <script is:inline>
+      (function() {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      })();
+    </script>
+    <style>
+      :root {
+        --radius-lg: 14px;
+        --radius-sm: 8px;
+        --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+          "Segoe UI", sans-serif;
+      }
+
+      /* Dark theme (default) */
+      :root,
+      [data-theme="dark"] {
+        --bg: #0b1020;
+        --bg-alt: #121829;
+        --accent: #5dd6ff;
+        --accent-soft: rgba(93, 214, 255, 0.12);
+        --text: #f5f7ff;
+        --muted: #a0a4c0;
+        --border: #252b3f;
+        --warning: #ffb86c;
+        --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.45);
+        --header-bg: linear-gradient(
+          to right,
+          rgba(5, 8, 24, 0.9),
+          rgba(5, 8, 24, 0.6)
+        );
+        --body-bg: radial-gradient(circle at top, #1a2340 0, #050712 55%);
+        --header-border: rgba(255, 255, 255, 0.04);
+        --footer-border: rgba(255, 255, 255, 0.04);
+      }
+
+      /* Light theme */
+      [data-theme="light"] {
+        --bg: #ffffff;
+        --bg-alt: #f8f9fa;
+        --accent: #0066cc;
+        --accent-soft: rgba(0, 102, 204, 0.12);
+        --text: #1a1a1a;
+        --muted: #6b7280;
+        --border: #e5e7eb;
+        --warning: #d97706;
+        --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.1);
+        --header-bg: linear-gradient(
+          to right,
+          rgba(248, 249, 250, 0.95),
+          rgba(248, 249, 250, 0.8)
+        );
+        --body-bg: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        --header-border: rgba(0, 0, 0, 0.08);
+        --footer-border: rgba(0, 0, 0, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--body-bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 1.1rem;
+        display: flex;
+        flex-direction: column;
+        transition: background 0.3s ease, color 0.3s ease;
+      }
+
+      main {
+        flex: 1;
+        padding: 2rem 1.25rem 3rem;
+      }
+
+      .shell {
+        max-width: 1040px;
+        margin: 0 auto;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      header {
+        border-bottom: 1px solid var(--header-border);
+        backdrop-filter: blur(14px);
+        background: var(--header-bg);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        transition: background 0.3s ease, border-color 0.3s ease;
+      }
+
+      header .inner {
+        max-width: 1040px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.85rem 1.25rem;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      .brand-logo {
+        width: 30px;
+        height: 30px;
+        border-radius: 999px;
+        background: radial-gradient(circle at 30% 30%, #ffffff, #5dd6ff 40%, #121829 70%);
+        box-shadow: 0 0 28px rgba(93, 214, 255, 0.55);
+        position: relative;
+      }
+
+      .brand-logo::after {
+        content: "";
+        position: absolute;
+        inset: 7px;
+        border-radius: inherit;
+        border: 2px solid rgba(5, 8, 24, 0.85);
+      }
+
+      .brand-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      .brand-title:hover {
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      .brand-sub {
+        font-size: 0.82rem;
+        color: var(--muted);
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+        font-size: 0.95rem;
+      }
+
+      nav a {
+        color: var(--muted);
+        text-decoration: none;
+        padding: 0.25rem 0.6rem;
+        border-radius: 999px;
+      }
+
+      nav a.active {
+        color: var(--text);
+        background: rgba(93, 214, 255, 0.12);
+        border: 1px solid rgba(93, 214, 255, 0.35);
+      }
+
+      nav a:hover {
+        color: var(--text);
+        background: rgba(93, 214, 255, 0.1);
+      }
+
+      footer {
+        border-top: 1px solid var(--footer-border);
+        padding: 1rem 1.25rem 1.5rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+        transition: border-color 0.3s ease;
+      }
+
+      footer .inner {
+        max-width: 1040px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 720px) {
+        header .inner {
+          padding-inline: 1rem;
+        }
+        main {
+          padding-inline: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+        <div class="brand">
+          <div class="brand-logo"></div>
+          <div>
+            <a href={`/?lang=${lang}`} class="brand-title">GlossarIA</a>
+            <div class="brand-sub">
+              {t('brandSubtitle', lang)}
+            </div>
+          </div>
+        </div>
+        <nav>
+          <a href={`/?lang=${lang}`} class={Astro.url.pathname === '/' ? 'active' : ''}>
+            {t('navGlossary', lang)}
+          </a>
+          <a
+            href={`/about?lang=${lang}`}
+            class={Astro.url.pathname === '/about' ? 'active' : ''}
+          >
+            {t('navAbout', lang)}
+          </a>
+          <a
+            href={`/contribute?lang=${lang}`}
+            class={Astro.url.pathname === '/contribute' ? 'active' : ''}
+          >
+            {t('navContribute', lang)}
+          </a>
+          <ThemeToggle lang={lang} />
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="shell">
+        <slot />
+      </div>
+    </main>
+
+    <footer>
+      <div class="inner">
+        <div>© {new Date().getFullYear()} GlossarIA.</div>
+        <div set:html={t('footerLicense', lang)}>
+        </div>
+        <div>
+          {lang === 'es' ? 'Desarrollado por' : 'Developed by'} <a href="https://natiboo.es" target="_blank" rel="noopener">Natiboo</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

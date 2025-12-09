@@ -1,0 +1,32 @@
+services:
+  glossaria:
+    build: .
+    container_name: glossaria-app
+    ports:
+      - "4321:4321"
+    volumes:
+      - app-sync:/app:nocopy
+      - /app/node_modules
+      - /app/web/node_modules
+      - /app/scripts/node_modules
+    environment:
+      - NODE_ENV=development
+    command: sh -c "cd web && npm run dev -- --host 0.0.0.0"
+
+  glossaria-build:
+    build: .
+    container_name: glossaria-build
+    volumes:
+      - app-sync:/app:nocopy
+      - /app/node_modules
+      - /app/web/node_modules
+      - /app/scripts/node_modules
+    environment:
+      - NODE_ENV=production
+    command: sh -c "echo '🏗️ Building project inside container...' && echo '📦 Installing dependencies...' && cd web && npm install && cd ../scripts && npm install && echo '🔨 Building web application...' && cd ../web && npm run build && echo '✅ Project built successfully inside container'"
+    profiles:
+      - build
+
+volumes:
+  app-sync:
+    external: true
