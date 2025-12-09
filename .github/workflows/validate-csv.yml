@@ -1,0 +1,32 @@
+name: Validate CSV
+
+on:
+  pull_request:
+    paths:
+      - "data/glossary.csv"
+      - "scripts/validate-csv.js"
+  push:
+    paths:
+      - "data/glossary.csv"
+      - "scripts/validate-csv.js"
+
+jobs:
+  validate-csv:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install dependencies in scripts directory
+        run: |
+          cd scripts
+          npm ci
+
+      - name: Validate CSV
+        run: node scripts/validate-csv.js

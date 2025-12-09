@@ -1,0 +1,31 @@
+---
+const url = new URL(Astro.request.url);
+const currentLang = url.searchParams.get('lang') ?? 'es';
+
+function makeUrl(lang: string) {
+  const u = new URL(url);
+  u.searchParams.set('lang', lang);
+  return u.pathname + u.search;
+}
+---
+
+<div style="display:flex;gap:0.4rem;align-items:center;font-size:0.8rem;">
+  <button
+    type="button"
+    style={`padding:0.2rem 0.55rem;border-radius:999px;border:1px solid ${
+      currentLang === 'es' ? 'var(--accent)' : 'var(--border)'
+    };background:${currentLang === 'es' ? 'var(--accent-soft)' : 'transparent'};color:var(--text);cursor:pointer;font-size:0.78rem;`}
+    onclick={`window.location.href='${makeUrl('es')}'`}
+  >
+    ES
+  </button>
+  <button
+    type="button"
+    style={`padding:0.2rem 0.55rem;border-radius:999px;border:1px solid ${
+      currentLang === 'en' ? 'var(--accent)' : 'var(--border)'
+    };background:${currentLang === 'en' ? 'var(--accent-soft)' : 'transparent'};color:var(--text);cursor:pointer;font-size:0.78rem;`}
+    onclick={`window.location.href='${makeUrl('en')}'`}
+  >
+    EN
+  </button>
+</div>

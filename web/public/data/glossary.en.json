@@ -1,0 +1,1552 @@
+[
+  {
+    "id": "ia",
+    "section": "fundamentos",
+    "tags": [
+      "fundamentos",
+      "empresa"
+    ],
+    "level": "basico",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Artificial intelligence (AI)",
+    "short": "Field that aims to make machines perform tasks that normally require human intelligence, such as learning, reasoning or communicating.",
+    "long": "Field that aims to make machines perform tasks that normally require human intelligence, such as learning, reasoning or communicating.",
+    "example": "A system that analyzes complaints and suggests automatic responses."
+  },
+  {
+    "id": "machine_learning",
+    "section": "fundamentos",
+    "tags": [
+      "fundamentos",
+      "modelo",
+      "empresa"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Machine learning",
+    "short": "Subfield of AI that trains algorithms to learn from data without being explicitly programmed.",
+    "long": "Subfield of AI that trains algorithms to learn from data without being explicitly programmed.",
+    "example": "Models that detect fraud by analyzing transaction patterns."
+  },
+  {
+    "id": "deep_learning",
+    "section": "fundamentos",
+    "tags": [
+      "fundamentos",
+      "redes",
+      "vision"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Deep learning",
+    "short": "Technique based on neural networks with many layers that can process complex data such as images, speech or text.",
+    "long": "Technique based on neural networks with many layers that can process complex data such as images, speech or text.",
+    "example": "Facial recognition or medical image diagnosis."
+  },
+  {
+    "id": "red_neuronal",
+    "section": "fundamentos",
+    "tags": [
+      "fundamentos",
+      "redes"
+    ],
+    "level": "basico",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Neural network",
+    "short": "Mathematical model inspired by the human brain, made of interconnected nodes that learn relationships between data.",
+    "long": "Mathematical model inspired by the human brain, made of interconnected nodes that learn relationships between data.",
+    "example": "A neural network that identifies products in catalog photos."
+  },
+  {
+    "id": "dataset",
+    "section": "fundamentos",
+    "tags": [
+      "datos",
+      "fundamentos"
+    ],
+    "level": "basico",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Dataset",
+    "short": "Structured collection of data used to train AI models.",
+    "long": "Structured collection of data used to train AI models.",
+    "example": "Historical customer records used to predict churn."
+  },
+  {
+    "id": "entrenamiento",
+    "section": "fundamentos",
+    "tags": [
+      "proceso",
+      "modelo"
+    ],
+    "level": "basico",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Training",
+    "short": "Process by which a model learns from data and adjusts its internal parameters.",
+    "long": "Process by which a model learns from data and adjusts its internal parameters.",
+    "example": "Training a model to classify emails as spam or not spam."
+  },
+  {
+    "id": "inferencia",
+    "section": "fundamentos",
+    "tags": [
+      "proceso",
+      "produccion"
+    ],
+    "level": "basico",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Inference",
+    "short": "Use of a trained model to generate results or predictions.",
+    "long": "Use of a trained model to generate results or predictions.",
+    "example": "ChatGPT answering questions in real time."
+  },
+  {
+    "id": "feature",
+    "section": "fundamentos",
+    "tags": [
+      "datos",
+      "feature"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Feature",
+    "short": "Variable or attribute in the data used to train a model.",
+    "long": "Variable or attribute in the data used to train a model.",
+    "example": "Age, country and purchase frequency in a sales prediction model."
+  },
+  {
+    "id": "overfitting",
+    "section": "fundamentos",
+    "tags": [
+      "modelo",
+      "calidad"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Overfitting",
+    "short": "When a model learns the training data too well and fails to generalize to new data.",
+    "long": "When a model learns the training data too well and fails to generalize to new data.",
+    "example": "A model that performs well on old customers but poorly on new ones."
+  },
+  {
+    "id": "evaluacion_modelo",
+    "section": "fundamentos",
+    "tags": [
+      "modelo",
+      "metricas"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Model evaluation",
+    "short": "Measuring model accuracy and quality using metrics such as accuracy, recall or F1-score.",
+    "long": "Measuring model accuracy and quality using metrics such as accuracy, recall or F1-score.",
+    "example": "Testing a risk scoring model before launching it to production."
+  },
+  {
+    "id": "pipeline_ia",
+    "section": "fundamentos",
+    "tags": [
+      "proceso",
+      "mlops"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "AI pipeline",
+    "short": "Set of steps that define a model life cycle, from data collection to deployment.",
+    "long": "Set of steps that define a model life cycle, from data collection to deployment.",
+    "example": "Automated workflow that updates a recommendation model every week."
+  },
+  {
+    "id": "mlops",
+    "section": "fundamentos",
+    "tags": [
+      "mlops",
+      "devops",
+      "produccion"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "MLOps",
+    "short": "Practice that combines development and operations to manage AI models in production.",
+    "long": "Practice that combines development and operations to manage AI models in production.",
+    "example": "Integrating models into the company's CI/CD pipeline."
+  },
+  {
+    "id": "llm",
+    "section": "modelos_arquitecturas",
+    "tags": [
+      "texto",
+      "generativa",
+      "empresa"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Language model (LLM)",
+    "short": "Algorithm trained on large volumes of text to generate natural language.",
+    "long": "Algorithm trained on large volumes of text to generate natural language.",
+    "example": "GPT-4 or Claude used for customer support or report generation."
+  },
+  {
+    "id": "transformer",
+    "section": "modelos_arquitecturas",
+    "tags": [
+      "arquitectura",
+      "text",
+      "transformer"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Transformer",
+    "short": "Architecture that allows efficient parallel processing of sequences such as text.",
+    "long": "Architecture that allows efficient parallel processing of sequences such as text.",
+    "example": "Foundation of most current generative models."
+  },
+  {
+    "id": "token",
+    "section": "modelos_arquitecturas",
+    "tags": [
+      "texto",
+      "coste",
+      "tokens"
+    ],
+    "level": "basico",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Token",
+    "short": "Smallest unit of text processed by a model, which can be a word or a fragment.",
+    "long": "Smallest unit of text processed by a model, which can be a word or a fragment.",
+    "example": "The cost of using ChatGPT is measured in tokens processed."
+  },
+  {
+    "id": "embedding",
+    "section": "modelos_arquitecturas",
+    "tags": [
+      "vector",
+      "busqueda",
+      "semantica"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Embedding",
+    "short": "Numeric representation of text, image or audio that allows measuring semantic similarity.",
+    "long": "Numeric representation of text, image or audio that allows measuring semantic similarity.",
+    "example": "Searching for similar documents in a corporate repository."
+  },
+  {
+    "id": "fine_tuning",
+    "section": "modelos_arquitecturas",
+    "tags": [
+      "ajuste",
+      "modelo",
+      "dominio"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Fine-tuning",
+    "short": "Adapting a base model with specific data for a concrete use case.",
+    "long": "Adapting a base model with specific data for a concrete use case.",
+    "example": "Training GPT with internal documentation for technical support."
+  },
+  {
+    "id": "rag",
+    "section": "modelos_arquitecturas",
+    "tags": [
+      "rag",
+      "busqueda",
+      "generativa"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "RAG (Retrieval-Augmented Generation)",
+    "short": "Technique that combines information retrieval with text generation.",
+    "long": "Technique that combines information retrieval with text generation.",
+    "example": "Assistants that answer using up-to-date knowledge bases."
+  },
+  {
+    "id": "prompt",
+    "section": "modelos_arquitecturas",
+    "tags": [
+      "prompt",
+      "instrucciones"
+    ],
+    "level": "basico",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Prompt",
+    "short": "Instruction or text that guides the model's response.",
+    "long": "Instruction or text that guides the model's response.",
+    "example": "For example: summarize this contract in plain language."
+  },
+  {
+    "id": "prompt_engineering",
+    "section": "modelos_arquitecturas",
+    "tags": [
+      "prompt",
+      "diseno",
+      "plantillas"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Prompt engineering",
+    "short": "Design and optimization of prompts to improve generative model outputs.",
+    "long": "Design and optimization of prompts to improve generative model outputs.",
+    "example": "Creating prompt templates to draft consistent legal emails."
+  },
+  {
+    "id": "zero_shot",
+    "section": "modelos_arquitecturas",
+    "tags": [
+      "generalizacion",
+      "tareas"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Zero-shot learning",
+    "short": "Ability of a model to handle tasks without specific prior examples.",
+    "long": "Ability of a model to handle tasks without specific prior examples.",
+    "example": "ChatGPT solving a question that was not directly seen during training."
+  },
+  {
+    "id": "few_shot",
+    "section": "modelos_arquitecturas",
+    "tags": [
+      "pocos_datos",
+      "ejemplos"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Few-shot learning",
+    "short": "Learning from only a small number of labeled examples.",
+    "long": "Learning from only a small number of labeled examples.",
+    "example": "Training a model with only a handful of example forms."
+  },
+  {
+    "id": "multimodalidad",
+    "section": "modelos_arquitecturas",
+    "tags": [
+      "multimodal",
+      "imagen",
+      "texto"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Multimodality",
+    "short": "Ability of a model to understand and combine different data types such as text, image or audio.",
+    "long": "Ability of a model to understand and combine different data types such as text, image or audio.",
+    "example": "Uploading a product photo and getting an automatic description."
+  },
+  {
+    "id": "vector_store",
+    "section": "modelos_arquitecturas",
+    "tags": [
+      "vector",
+      "busqueda",
+      "almacen"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Vector store",
+    "short": "Database optimized to store embeddings and perform similarity search.",
+    "long": "Database optimized to store embeddings and perform similarity search.",
+    "example": "Using Chroma or Pinecone in corporate semantic search systems."
+  },
+  {
+    "id": "aprendizaje_supervisado",
+    "section": "tecnicas_procesos",
+    "tags": [
+      "supervisado",
+      "etiquetas"
+    ],
+    "level": "basico",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Supervised learning",
+    "short": "Model learns from labeled data where the correct answer is known.",
+    "long": "Model learns from labeled data where the correct answer is known.",
+    "example": "Classifying emails as spam or not spam."
+  },
+  {
+    "id": "aprendizaje_no_supervisado",
+    "section": "tecnicas_procesos",
+    "tags": [
+      "no_supervisado",
+      "clusters"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Unsupervised learning",
+    "short": "Model identifies patterns in data without prior labels.",
+    "long": "Model identifies patterns in data without prior labels.",
+    "example": "Segmenting customers by purchasing behavior."
+  },
+  {
+    "id": "aprendizaje_refuerzo",
+    "section": "tecnicas_procesos",
+    "tags": [
+      "refuerzo",
+      "politicas"
+    ],
+    "level": "avanzado",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Reinforcement learning",
+    "short": "Model learns by trial and error, receiving rewards for correct decisions.",
+    "long": "Model learns by trial and error, receiving rewards for correct decisions.",
+    "example": "Optimizing logistics routes or dynamic pricing."
+  },
+  {
+    "id": "rlhf",
+    "section": "tecnicas_procesos",
+    "tags": [
+      "rlhf",
+      "feedback_humano"
+    ],
+    "level": "avanzado",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "RLHF (Reinforcement Learning from Human Feedback)",
+    "short": "Training models with human feedback to improve their responses.",
+    "long": "Training models with human feedback to improve their responses.",
+    "example": "Improving the quality and safety of a conversational assistant."
+  },
+  {
+    "id": "data_cleaning",
+    "section": "tecnicas_procesos",
+    "tags": [
+      "datos",
+      "calidad"
+    ],
+    "level": "basico",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Data cleaning",
+    "short": "Process of removing errors, duplicates and inconsistent values from data.",
+    "long": "Process of removing errors, duplicates and inconsistent values from data.",
+    "example": "Cleaning customer databases before predictive analysis."
+  },
+  {
+    "id": "data_augmentation",
+    "section": "tecnicas_procesos",
+    "tags": [
+      "datos",
+      "aumento",
+      "sintetico"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Data augmentation",
+    "short": "Generating additional or synthetic data to improve model training.",
+    "long": "Generating additional or synthetic data to improve model training.",
+    "example": "Creating additional images of a product from different angles."
+  },
+  {
+    "id": "normalizacion",
+    "section": "tecnicas_procesos",
+    "tags": [
+      "datos",
+      "escalado"
+    ],
+    "level": "basico",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Normalization",
+    "short": "Adjusting data values so they follow a common comparable scale.",
+    "long": "Adjusting data values so they follow a common comparable scale.",
+    "example": "Scaling prices or ages to avoid numerical bias."
+  },
+  {
+    "id": "evaluacion_ab",
+    "section": "tecnicas_procesos",
+    "tags": [
+      "experimentos",
+      "a_b"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "A/B testing",
+    "short": "Controlled comparison of two versions of a model or system to see which performs better.",
+    "long": "Controlled comparison of two versions of a model or system to see which performs better.",
+    "example": "Measuring which recommendation model generates more sales."
+  },
+  {
+    "id": "benchmarking",
+    "section": "tecnicas_procesos",
+    "tags": [
+      "metricas",
+      "comparacion"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Benchmarking",
+    "short": "Evaluating models by comparing their results with standard metrics or reference datasets.",
+    "long": "Evaluating models by comparing their results with standard metrics or reference datasets.",
+    "example": "Comparing the accuracy of several classification models."
+  },
+  {
+    "id": "feature_engineering",
+    "section": "tecnicas_procesos",
+    "tags": [
+      "features",
+      "diseno"
+    ],
+    "level": "avanzado",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Feature engineering",
+    "short": "Selection and transformation of variables that improve model learning.",
+    "long": "Selection and transformation of variables that improve model learning.",
+    "example": "Deriving the time since last purchase field from date data."
+  },
+  {
+    "id": "explainability",
+    "section": "tecnicas_procesos",
+    "tags": [
+      "explicabilidad",
+      "modelo"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Explainability",
+    "short": "Ability of a model to justify or explain its decisions in an understandable way.",
+    "long": "Ability of a model to justify or explain its decisions in an understandable way.",
+    "example": "Showing why an automated system denied a loan."
+  },
+  {
+    "id": "bias",
+    "section": "tecnicas_procesos",
+    "tags": [
+      "sesgo",
+      "etica"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Algorithmic bias",
+    "short": "Distortion in model results caused by biased data or design choices.",
+    "long": "Distortion in model results caused by biased data or design choices.",
+    "example": "A hiring model that favors one gender over another."
+  },
+  {
+    "id": "chatbot",
+    "section": "aplicaciones_herramientas",
+    "tags": [
+      "chatbot",
+      "soporte",
+      "conversacion"
+    ],
+    "level": "basico",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Chatbot",
+    "short": "Virtual assistant that holds automated conversations with users.",
+    "long": "Virtual assistant that holds automated conversations with users.",
+    "example": "24/7 customer support on a corporate website."
+  },
+  {
+    "id": "generador_texto",
+    "section": "aplicaciones_herramientas",
+    "tags": [
+      "texto",
+      "generativa",
+      "contenido"
+    ],
+    "level": "basico",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Text generator",
+    "short": "Model that writes text based on instructions or prompts.",
+    "long": "Model that writes text based on instructions or prompts.",
+    "example": "Creating articles or product descriptions for e-commerce."
+  },
+  {
+    "id": "generador_imagenes",
+    "section": "aplicaciones_herramientas",
+    "tags": [
+      "imagen",
+      "generativa",
+      "creatividad"
+    ],
+    "level": "basico",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Image generator",
+    "short": "Model that creates images from natural language descriptions.",
+    "long": "Model that creates images from natural language descriptions.",
+    "example": "Designing prototypes or marketing materials."
+  },
+  {
+    "id": "generador_codigo",
+    "section": "aplicaciones_herramientas",
+    "tags": [
+      "codigo",
+      "desarrollo"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Code generator",
+    "short": "Tool that suggests or writes code snippets from instructions.",
+    "long": "Tool that suggests or writes code snippets from instructions.",
+    "example": "Using GitHub Copilot to speed up development."
+  },
+  {
+    "id": "generador_audio",
+    "section": "aplicaciones_herramientas",
+    "tags": [
+      "audio",
+      "voz",
+      "sintesis"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Audio generator",
+    "short": "Model that synthesizes voice or music from text or parameters.",
+    "long": "Model that synthesizes voice or music from text or parameters.",
+    "example": "Creating voice-overs for corporate videos."
+  },
+  {
+    "id": "generador_video",
+    "section": "aplicaciones_herramientas",
+    "tags": [
+      "video",
+      "generativa"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Video generator",
+    "short": "System that produces video clips or animations from text, images or templates.",
+    "long": "System that produces video clips or animations from text, images or templates.",
+    "example": "Generating automatic ads with virtual actors."
+  },
+  {
+    "id": "agente_autonomo",
+    "section": "aplicaciones_herramientas",
+    "tags": [
+      "agentes",
+      "automatizacion"
+    ],
+    "level": "avanzado",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Autonomous agent",
+    "short": "Model or system that chains actions to perform complex tasks with little human supervision.",
+    "long": "Model or system that chains actions to perform complex tasks with little human supervision.",
+    "example": "Bots that manage inventories or update reports automatically."
+  },
+  {
+    "id": "api_ia",
+    "section": "aplicaciones_herramientas",
+    "tags": [
+      "api",
+      "integracion",
+      "backend"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "AI API",
+    "short": "Interface that allows integrating AI models into external applications and systems.",
+    "long": "Interface that allows integrating AI models into external applications and systems.",
+    "example": "Connecting a CRM to GPT to analyze sales conversations."
+  },
+  {
+    "id": "framework_ia",
+    "section": "aplicaciones_herramientas",
+    "tags": [
+      "framework",
+      "desarrollo"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "AI framework",
+    "short": "Set of libraries and tools for developing, training and deploying AI models.",
+    "long": "Set of libraries and tools for developing, training and deploying AI models.",
+    "example": "Using TensorFlow or PyTorch in computer vision projects."
+  },
+  {
+    "id": "low_code_no_code_ia",
+    "section": "aplicaciones_herramientas",
+    "tags": [
+      "low_code",
+      "no_code",
+      "automatizacion"
+    ],
+    "level": "basico",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Low-code / No-code AI",
+    "short": "Platforms that allow building AI solutions with little or no code.",
+    "long": "Platforms that allow building AI solutions with little or no code.",
+    "example": "Automation tools for marketing or human resources."
+  },
+  {
+    "id": "data_lake",
+    "section": "aplicaciones_herramientas",
+    "tags": [
+      "datos",
+      "almacen",
+      "nube"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Data lake",
+    "short": "Centralized repository where raw data from multiple sources is stored.",
+    "long": "Centralized repository where raw data from multiple sources is stored.",
+    "example": "Cloud data lake used to train corporate models."
+  },
+  {
+    "id": "edge_ai",
+    "section": "aplicaciones_herramientas",
+    "tags": [
+      "edge",
+      "dispositivos",
+      "iot"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Edge AI",
+    "short": "Running AI models directly on local devices without always relying on the cloud.",
+    "long": "Running AI models directly on local devices without always relying on the cloud.",
+    "example": "Smart cameras in factories detecting anomalies."
+  },
+  {
+    "id": "ia_responsable",
+    "section": "etica_regulacion",
+    "tags": [
+      "etica",
+      "riesgo",
+      "gobernanza"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Responsible AI",
+    "short": "Ethical, transparent and safe use of artificial intelligence in products and processes.",
+    "long": "Ethical, transparent and safe use of artificial intelligence in products and processes.",
+    "example": "Introducing human review in decisions that affect people."
+  },
+  {
+    "id": "privacidad_diferencial",
+    "section": "etica_regulacion",
+    "tags": [
+      "privacidad",
+      "datos",
+      "anonimizacion"
+    ],
+    "level": "avanzado",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Differential privacy",
+    "short": "Technique that protects individual identity by adding controlled noise to aggregated data.",
+    "long": "Technique that protects individual identity by adding controlled noise to aggregated data.",
+    "example": "Anonymizing customer records for analysis without exposing identities."
+  },
+  {
+    "id": "trazabilidad_modelo",
+    "section": "etica_regulacion",
+    "tags": [
+      "trazabilidad",
+      "auditoria"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Model traceability",
+    "short": "Ability to know how, with which data and with which versions a model was trained and changed.",
+    "long": "Ability to know how, with which data and with which versions a model was trained and changed.",
+    "example": "Demonstrating compliance during regulatory audits."
+  },
+  {
+    "id": "ai_act",
+    "section": "etica_regulacion",
+    "tags": [
+      "regulacion",
+      "ue",
+      "ley"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "EU AI Act",
+    "short": "European Union legal framework that classifies AI systems by risk levels and defines obligations.",
+    "long": "European Union legal framework that classifies AI systems by risk levels and defines obligations.",
+    "example": "Documenting the use of AI in the company's critical processes."
+  },
+  {
+    "id": "transparencia_algoritmica",
+    "section": "etica_regulacion",
+    "tags": [
+      "transparencia",
+      "modelo",
+      "explicacion"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Algorithmic transparency",
+    "short": "Degree to which the functioning of an algorithmic decision system can be explained and understood.",
+    "long": "Degree to which the functioning of an algorithmic decision system can be explained and understood.",
+    "example": "Detailing recommendation criteria in a job platform."
+  },
+  {
+    "id": "derechos_digitales",
+    "section": "etica_regulacion",
+    "tags": [
+      "derechos",
+      "ciudadania",
+      "datos"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Digital rights",
+    "short": "Set of principles and rules that protect people in the digital environment, including AI systems.",
+    "long": "Set of principles and rules that protect people in the digital environment, including AI systems.",
+    "example": "Right to know whether a decision was made by an algorithm."
+  },
+  {
+    "id": "gobernanza_datos",
+    "section": "etica_regulacion",
+    "tags": [
+      "gobernanza",
+      "datos",
+      "estrategia"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Data governance",
+    "short": "Strategic management of the data lifecycle in an organization, including quality, access and security.",
+    "long": "Strategic management of the data lifecycle in an organization, including quality, access and security.",
+    "example": "Defining policies for who can view and use certain data."
+  },
+  {
+    "id": "green_ai",
+    "section": "etica_regulacion",
+    "tags": [
+      "sostenibilidad",
+      "energia",
+      "huella"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Green AI",
+    "short": "Approach that prioritizes energy efficiency and carbon footprint reduction in AI projects.",
+    "long": "Approach that prioritizes energy efficiency and carbon footprint reduction in AI projects.",
+    "example": "Choosing smaller models when possible to reduce resource consumption."
+  },
+  {
+    "id": "seguridad_modelos",
+    "section": "etica_regulacion",
+    "tags": [
+      "seguridad",
+      "ataques",
+      "proteccion"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Model security",
+    "short": "Measures to protect AI models from data leaks, adversarial attacks and misuse.",
+    "long": "Measures to protect AI models from data leaks, adversarial attacks and misuse.",
+    "example": "Protecting confidential prompts and responses in enterprise environments."
+  },
+  {
+    "id": "evaluacion_impacto_ia",
+    "section": "etica_regulacion",
+    "tags": [
+      "impacto",
+      "riesgo",
+      "evaluacion"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "AI impact assessment",
+    "short": "Prior analysis of risks and effects before deploying an AI system.",
+    "long": "Prior analysis of risks and effects before deploying an AI system.",
+    "example": "Assessing bias and privacy risks before launching a legal chatbot."
+  },
+  {
+    "id": "human_in_the_loop",
+    "section": "etica_regulacion",
+    "tags": [
+      "human_in_the_loop",
+      "revision"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Human-in-the-loop",
+    "short": "Approach in which a person reviews, corrects or validates the model's decisions.",
+    "long": "Approach in which a person reviews, corrects or validates the model's decisions.",
+    "example": "Moderators validating AI-generated content before publishing."
+  },
+  {
+    "id": "futuro_trabajo_ia",
+    "section": "etica_regulacion",
+    "tags": [
+      "futuro_trabajo",
+      "competencias",
+      "empresa"
+    ],
+    "level": "basico",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-11-13",
+    "updated_at": "2025-11-13",
+    "language": "en",
+    "term": "Future of work with AI",
+    "short": "Changes in professional roles and skills driven by the adoption of artificial intelligence.",
+    "long": "Changes in professional roles and skills driven by the adoption of artificial intelligence.",
+    "example": "Continuous training programs in applied AI for corporate teams."
+  },
+  {
+    "id": "underfitting",
+    "section": "fundamentos",
+    "tags": [
+      "fundamentos",
+      "modelo",
+      "calidad"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-12-08",
+    "updated_at": "2025-12-08",
+    "language": "en",
+    "term": "Underfitting",
+    "short": "Situation where a model is too simple and fails to capture underlying patterns in the data, leading to poor performance on both training and test data.",
+    "long": "Situation where a model is too simple and fails to capture underlying patterns in the data, leading to poor performance on both training and test data.",
+    "example": "A linear model that poorly predicts complex variations in sales data."
+  },
+  {
+    "id": "hiperparametros",
+    "section": "fundamentos",
+    "tags": [
+      "fundamentos",
+      "modelo",
+      "ajuste"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-12-08",
+    "updated_at": "2025-12-08",
+    "language": "en",
+    "term": "Hyperparameters",
+    "short": "Parameters set manually before training that control the model's learning process.",
+    "long": "Parameters set manually before training that control the model's learning process.",
+    "example": "Learning rate or number of layers in a neural network."
+  },
+  {
+    "id": "gradient_descent",
+    "section": "fundamentos",
+    "tags": [
+      "fundamentos",
+      "optimizacion",
+      "entrenamiento"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-12-08",
+    "updated_at": "2025-12-08",
+    "language": "en",
+    "term": "Gradient Descent",
+    "short": "Optimization algorithm that iteratively adjusts model parameters to minimize the loss function.",
+    "long": "Optimization algorithm that iteratively adjusts model parameters to minimize the loss function.",
+    "example": "Used to train models by minimizing prediction errors."
+  },
+  {
+    "id": "cnn",
+    "section": "modelos_arquitecturas",
+    "tags": [
+      "arquitectura",
+      "vision",
+      "imagen"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-12-08",
+    "updated_at": "2025-12-08",
+    "language": "en",
+    "term": "Convolutional Neural Network (CNN)",
+    "short": "Neural network architecture designed to process grid-structured data like images using convolutions and pooling.",
+    "long": "Neural network architecture designed to process grid-structured data like images using convolutions and pooling.",
+    "example": "Detecting defects in manufactured product images."
+  },
+  {
+    "id": "rnn",
+    "section": "modelos_arquitecturas",
+    "tags": [
+      "arquitectura",
+      "secuencias",
+      "tiempo"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-12-08",
+    "updated_at": "2025-12-08",
+    "language": "en",
+    "term": "Recurrent Neural Network (RNN)",
+    "short": "Architecture for processing sequential data, maintaining memory of previous inputs; includes variants like LSTM for long dependencies.",
+    "long": "Architecture for processing sequential data, maintaining memory of previous inputs; includes variants like LSTM for long dependencies.",
+    "example": "Predicting time series in finance or predictive text."
+  },
+  {
+    "id": "gan",
+    "section": "modelos_arquitecturas",
+    "tags": [
+      "arquitectura",
+      "generativa",
+      "adversarial"
+    ],
+    "level": "avanzado",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-12-08",
+    "updated_at": "2025-12-08",
+    "language": "en",
+    "term": "Generative Adversarial Network (GAN)",
+    "short": "Model consisting of a generator and discriminator that compete to create realistic data, such as synthetic images.",
+    "long": "Model consisting of a generator and discriminator that compete to create realistic data, such as synthetic images.",
+    "example": "Generating fake data for privacy testing in databases."
+  },
+  {
+    "id": "transfer_learning",
+    "section": "modelos_arquitecturas",
+    "tags": [
+      "aprendizaje",
+      "transferencia",
+      "modelo"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-12-08",
+    "updated_at": "2025-12-08",
+    "language": "en",
+    "term": "Transfer Learning",
+    "short": "Technique that reuses a pre-trained model on a related task to speed up training on a new problem.",
+    "long": "Technique that reuses a pre-trained model on a related task to speed up training on a new problem.",
+    "example": "Adapting a general image model to specific medical diagnosis."
+  },
+  {
+    "id": "cross_validation",
+    "section": "tecnicas_procesos",
+    "tags": [
+      "evaluacion",
+      "modelo",
+      "validacion"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-12-08",
+    "updated_at": "2025-12-08",
+    "language": "en",
+    "term": "Cross-Validation",
+    "short": "Method to evaluate model performance by splitting data into subsets and rotating between training and testing.",
+    "long": "Method to evaluate model performance by splitting data into subsets and rotating between training and testing.",
+    "example": "K-fold to test robustness in churn predictions."
+  },
+  {
+    "id": "ensemble_methods",
+    "section": "tecnicas_procesos",
+    "tags": [
+      "ensamble",
+      "modelo",
+      "combinacion"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-12-08",
+    "updated_at": "2025-12-08",
+    "language": "en",
+    "term": "Ensemble Methods",
+    "short": "Techniques that combine multiple models to improve accuracy and robustness, such as Random Forest or Boosting.",
+    "long": "Techniques that combine multiple models to improve accuracy and robustness, such as Random Forest or Boosting.",
+    "example": "Combining predictors for better fraud detection."
+  },
+  {
+    "id": "hallucination",
+    "section": "tecnicas_procesos",
+    "tags": [
+      "generativa",
+      "error",
+      "llm"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-12-08",
+    "updated_at": "2025-12-08",
+    "language": "en",
+    "term": "Hallucination",
+    "short": "Phenomenon in generative models where plausible but false or invented responses are produced.",
+    "long": "Phenomenon in generative models where plausible but false or invented responses are produced.",
+    "example": "An LLM generating incorrect facts in a historical report."
+  },
+  {
+    "id": "nlp",
+    "section": "aplicaciones_herramientas",
+    "tags": [
+      "texto",
+      "nlp",
+      "lenguaje"
+    ],
+    "level": "basico",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-12-08",
+    "updated_at": "2025-12-08",
+    "language": "en",
+    "term": "Natural Language Processing (NLP)",
+    "short": "AI subfield focused on interactions between computers and human language, including text analysis and translation.",
+    "long": "AI subfield focused on interactions between computers and human language, including text analysis and translation.",
+    "example": "Sentiment analysis on customer reviews."
+  },
+  {
+    "id": "computer_vision",
+    "section": "aplicaciones_herramientas",
+    "tags": [
+      "vision",
+      "imagen",
+      "analisis"
+    ],
+    "level": "basico",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-12-08",
+    "updated_at": "2025-12-08",
+    "language": "en",
+    "term": "Computer Vision",
+    "short": "AI area that enables machines to interpret and understand images and videos.",
+    "long": "AI area that enables machines to interpret and understand images and videos.",
+    "example": "Automatic inspection in manufacturing production lines."
+  },
+  {
+    "id": "recommendation_system",
+    "section": "aplicaciones_herramientas",
+    "tags": [
+      "recomendacion",
+      "personalizacion"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-12-08",
+    "updated_at": "2025-12-08",
+    "language": "en",
+    "term": "Recommendation System",
+    "short": "Tool that suggests items or content based on user preferences and historical data.",
+    "long": "Tool that suggests items or content based on user preferences and historical data.",
+    "example": "Personalized suggestions on e-commerce platforms."
+  },
+  {
+    "id": "iot_ai",
+    "section": "aplicaciones_herramientas",
+    "tags": [
+      "iot",
+      "dispositivos",
+      "integracion"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-12-08",
+    "updated_at": "2025-12-08",
+    "language": "en",
+    "term": "IoT with AI",
+    "short": "Integration of AI into connected devices for real-time analysis and automation.",
+    "long": "Integration of AI into connected devices for real-time analysis and automation.",
+    "example": "Smart sensors in logistics for route optimization."
+  },
+  {
+    "id": "fairness",
+    "section": "etica_regulacion",
+    "tags": [
+      "equidad",
+      "etica",
+      "sesgo"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-12-08",
+    "updated_at": "2025-12-08",
+    "language": "en",
+    "term": "Fairness",
+    "short": "Ethical principle ensuring AI models do not discriminate against groups based on protected attributes like gender or ethnicity.",
+    "long": "Ethical principle ensuring AI models do not discriminate against groups based on protected attributes like gender or ethnicity.",
+    "example": "Ensuring a hiring model treats all candidates equally."
+  },
+  {
+    "id": "accountability",
+    "section": "etica_regulacion",
+    "tags": [
+      "responsabilidad",
+      "etica",
+      "gobernanza"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-12-08",
+    "updated_at": "2025-12-08",
+    "language": "en",
+    "term": "Accountability",
+    "short": "Obligation to assign and track who is responsible for AI systems' decisions and errors.",
+    "long": "Obligation to assign and track who is responsible for AI systems' decisions and errors.",
+    "example": "Assigning model owners in production environments."
+  },
+  {
+    "id": "gdpr",
+    "section": "etica_regulacion",
+    "tags": [
+      "regulacion",
+      "privacidad",
+      "ue"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-12-08",
+    "updated_at": "2025-12-08",
+    "language": "en",
+    "term": "General Data Protection Regulation (GDPR)",
+    "short": "EU legal framework for personal data protection, applicable to AI systems processing sensitive information.",
+    "long": "EU legal framework for personal data protection, applicable to AI systems processing sensitive information.",
+    "example": "Obtaining consent for using customer data in AI models."
+  },
+  {
+    "id": "prompt_injection",
+    "section": "etica_regulacion",
+    "tags": [
+      "seguridad",
+      "prompt",
+      "ataque"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-12-08",
+    "updated_at": "2025-12-08",
+    "language": "en",
+    "term": "Prompt Injection",
+    "short": "Vulnerability where a malicious user manipulates inputs to alter model behavior.",
+    "long": "Vulnerability where a malicious user manipulates inputs to alter model behavior.",
+    "example": "Attacks that make a chatbot reveal confidential information."
+  },
+  {
+    "id": "chain_of_thought",
+    "section": "modelos_arquitecturas",
+    "tags": [
+      "prompt",
+      "razonamiento",
+      "generativa"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-12-08",
+    "updated_at": "2025-12-08",
+    "language": "en",
+    "term": "Chain-of-Thought (CoT)",
+    "short": "Prompting technique that forces the model to reason step-by-step before giving the final answer, dramatically improving accuracy on complex tasks.",
+    "long": "Prompting technique that forces the model to reason step-by-step before giving the final answer, dramatically improving accuracy on complex tasks.",
+    "example": "Prompt: «Solve this math problem thinking step by step» so the LLM doesn’t make mistakes."
+  },
+  {
+    "id": "nlu",
+    "section": "aplicaciones_herramientas",
+    "tags": [
+      "texto",
+      "nlu",
+      "entendimiento"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-12-08",
+    "updated_at": "2025-12-08",
+    "language": "en",
+    "term": "Natural Language Understanding (NLU)",
+    "short": "NLP subfield focused on making the machine understand meaning, intent, and entities in human text.",
+    "long": "NLP subfield focused on making the machine understand meaning, intent, and entities in human text.",
+    "example": "Identifying that «I want to speak to an agent» is an escalation intent in a chatbot."
+  },
+  {
+    "id": "contexto",
+    "section": "modelos_arquitecturas",
+    "tags": [
+      "prompt",
+      "contexto",
+      "dominio",
+      "personalizacion"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-12-08",
+    "updated_at": "2025-12-08",
+    "language": "en",
+    "term": "Context",
+    "short": "Additional information provided to the model (usually at the beginning of the conversation or in the system prompt) so it understands the role, domain, rules or specific reality in which it must operate.",
+    "long": "Additional information provided to the model (usually at the beginning of the conversation or in the system prompt) so it understands the role, domain, rules or specific reality in which it must operate.",
+    "example": "«You are a Spanish labor lawyer with 20 years of experience and speak in a formal tone» or «You work in the finance department of an IBEX 35 company»."
+  },
+  {
+    "id": "context_window",
+    "section": "modelos_arquitecturas",
+    "tags": [
+      "llm",
+      "token",
+      "memoria",
+      "contexto"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-12-08",
+    "updated_at": "2025-12-08",
+    "language": "en",
+    "term": "Context Window",
+    "short": "Maximum number of tokens (words or subwords) that a language model can process and keep in memory in a single interaction.",
+    "long": "Maximum number of tokens (words or subwords) that a language model can process and keep in memory in a single interaction.",
+    "example": "GPT-4o has 128 k token context; Claude 3 has 200 k; Gemini 1.5 reaches 1 million."
+  },
+  {
+    "id": "ai_slop",
+    "section": "etica_regulacion",
+    "tags": [
+      "calidad",
+      "generativa",
+      "contenido",
+      "etica"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2025-12-08",
+    "updated_at": "2025-12-08",
+    "language": "en",
+    "term": "AI slop",
+    "short": "Low-quality, repetitive, generic or valueless content mass-produced by AI that floods websites, social media and documents.",
+    "long": "Low-quality, repetitive, generic or valueless content mass-produced by AI that floods websites, social media and documents.",
+    "example": "800-word SEO articles filled with empty phrases created by LLMs that provide no real value."
+  }
+]

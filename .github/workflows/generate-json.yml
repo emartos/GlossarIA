@@ -1,0 +1,43 @@
+name: Generate JSON
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "data/glossary.csv"
+      - "scripts/generate-json.js"
+  workflow_dispatch:
+
+jobs:
+  generate-json:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install dependencies in scripts directory
+        run: |
+          cd scripts
+          npm ci
+
+      - name: Generate JSON files
+        run: node scripts/generate-json.js
+
+      - name: Commit and push generated JSON files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/*.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-generate JSON files from CSV [skip ci]"
+            git push
+          fi
