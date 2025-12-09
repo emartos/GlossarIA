@@ -1,0 +1,19 @@
+{
+  "name": "glossaria-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "lint": "echo \"no lint configured yet\""
+  },
+  "dependencies": {
+    "astro": "^5.16.4",
+    "@astrojs/node": "^9.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}

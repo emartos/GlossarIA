@@ -1,0 +1,17 @@
+{
+  "name": "glossaria-scripts",
+  "version": "1.0.0",
+  "description": "Scripts for processing Glossaria data",
+  "private": true,
+  "scripts": {
+    "test": "node test-validate.js",
+    "validate": "node validate-csv.js",
+    "generate": "node generate-json.js",
+    "translate": "node translate-deepl.js"
+  },
+  "dependencies": {
+    "csv-parse": "^5.5.2",
+    "csv-stringify": "^6.4.4",
+    "node-fetch": "^2.7.0"
+  }
+}

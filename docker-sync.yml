@@ -1,0 +1,19 @@
+version: "2"
+syncs:
+  app-sync:
+    src: './'
+    sync_strategy: 'unison'
+    sync_excludes:
+      - '.git'
+      - '.idea'
+      - 'node_modules'
+      - '.DS_Store'
+      - 'Thumbs.db'
+      - '.dockerignore'
+      - 'Dockerfile*'
+      - 'docker-compose*'
+      - 'docker-sync.yml'
+    watch_excludes:
+      - '.git'
+      - '.idea'
+      - 'node_modules'

@@ -1,0 +1,537 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LangSwitcher from '../components/LangSwitcher.astro';
+import { SITE_CONFIG } from '../config/site';
+
+const url = new URL(Astro.request.url);
+const lang = (url.searchParams.get('lang') ?? 'es') as 'es' | 'en';
+---
+
+<Layout title="GlossarIA · Contribute" lang={lang}>
+  <section style="margin-top:0.75rem;">
+    <div style="display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;">
+      <h1 style="margin:0 0 0.6rem;font-size:1.5rem;">
+        {lang === 'es' ? 'Contribuir' : 'Contribute'}
+      </h1>
+      <div style="display:flex;gap:0.75rem;align-items:center;">
+        <LangSwitcher />
+      </div>
+    </div>
+
+    <p style="color:var(--muted);font-size:0.95rem;max-width:620px;">
+      {lang === 'es'
+        ? 'Puedes ayudar a mejorar GlossarIA sugiriendo nuevos términos, corrigiendo definiciones o mejorando las traducciones.'
+        : 'You can help improve GlossarIA by suggesting new terms, fixing definitions or improving translations.'}
+    </p>
+
+    <div style="color:var(--muted);font-size:0.9rem;max-width:620px;">
+      <p style="margin-bottom:1rem;">
+        {lang === 'es'
+          ? 'Hay varias formas de contribuir:'
+          : 'There are several ways to contribute:'}
+      </p>
+
+      <div style="margin-bottom:1.5rem;">
+        <h3 style="font-size:1rem;margin:0 0 0.5rem;color:var(--text);">
+          {lang === 'es' ? 'Opción 1: Contribución general' : 'Option 1: General contribution'}
+        </h3>
+        <ol style="margin:0;padding-left:1.2rem;">
+          <li>
+            {lang === 'es'
+              ? 'Lee la guía de CONTRIBUTING en GitHub.'
+              : 'Read the CONTRIBUTING guide on GitHub.'}
+            <br />
+            <a href={SITE_CONFIG.github.contributingUrl} target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:underline;">
+              {SITE_CONFIG.github.contributingUrl}
+            </a>
+          </li>
+          <li>
+            {lang === 'es'
+              ? 'Abre un Issue o haz fork del repositorio para crear un Pull Request con tu propuesta.'
+              : 'Open an Issue or fork the repository to create a Pull Request with your proposal.'}
+            <br />
+            <a href={SITE_CONFIG.github.url} target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:underline;">
+              {SITE_CONFIG.github.url}
+            </a>
+          </li>
+        </ol>
+      </div>
+
+      <div>
+        <h3 style="font-size:1rem;margin:0 0 0.5rem;color:var(--text);">
+          {lang === 'es' ? 'Opción 2: Asistente para nuevos términos' : 'Option 2: New terms assistant'}
+        </h3>
+        <p style="margin:0;">
+          {lang === 'es'
+            ? 'Usa el formulario de abajo para generar automáticamente los datos necesarios para un Pull Request con un nuevo término.'
+            : 'Use the form below to automatically generate the necessary data for a Pull Request with a new term.'}
+        </p>
+      </div>
+    </div>
+
+    <div
+      style="margin-top:1.5rem;padding:1.5rem;border-radius:var(--radius-lg);border:1px solid var(--border);background:var(--bg-alt);"
+    >
+      <h2 style="margin:0 0 1rem;font-size:1.2rem;">
+        {lang === 'es' ? 'Proponer nuevo término' : 'Propose new term'}
+      </h2>
+
+      <form id="term-form" style="display:flex;flex-direction:column;gap:1rem;">
+        <!-- ID and Basic Info -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div>
+            <label for="term-id" style="display:block;margin-bottom:0.3rem;font-size:0.9rem;color:var(--muted);">
+              {lang === 'es' ? 'ID del término*' : 'Term ID*'}
+            </label>
+            <input
+              type="text"
+              id="term-id"
+              name="id"
+              required
+              pattern="[a-z0-9_]+"
+              placeholder={lang === 'es' ? 'ej: machine_learning' : 'e.g: machine_learning'}
+              style="width:100%;padding:0.6rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg);color:var(--text);font-size:0.9rem;"
+            />
+            <small style="color:var(--muted);font-size:0.8rem;">
+              {lang === 'es' ? 'Solo minúsculas, números y guiones bajos' : 'Only lowercase, numbers and underscores'}
+            </small>
+          </div>
+
+          <div>
+            <label for="section" style="display:block;margin-bottom:0.3rem;font-size:0.9rem;color:var(--muted);">
+              {lang === 'es' ? 'Sección*' : 'Section*'}
+            </label>
+            <select
+              id="section"
+              name="section"
+              required
+              style="width:100%;padding:0.6rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg);color:var(--text);font-size:0.9rem;"
+            >
+              <option value="">{lang === 'es' ? 'Seleccionar...' : 'Select...'}</option>
+              <option value="fundamentos">{lang === 'es' ? 'Fundamentos' : 'Fundamentals'}</option>
+              <option value="modelos_arquitecturas">{lang === 'es' ? 'Modelos y Arquitecturas' : 'Models & Architectures'}</option>
+              <option value="tecnicas_procesos">{lang === 'es' ? 'Técnicas y Procesos' : 'Techniques & Processes'}</option>
+              <option value="aplicaciones_herramientas">{lang === 'es' ? 'Aplicaciones y Herramientas' : 'Applications & Tools'}</option>
+              <option value="etica_regulacion">{lang === 'es' ? 'Ética y Regulación' : 'Ethics & Regulation'}</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div>
+            <label for="level" style="display:block;margin-bottom:0.3rem;font-size:0.9rem;color:var(--muted);">
+              {lang === 'es' ? 'Nivel*' : 'Level*'}
+            </label>
+            <select
+              id="level"
+              name="level"
+              required
+              style="width:100%;padding:0.6rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg);color:var(--text);font-size:0.9rem;"
+            >
+              <option value="">{lang === 'es' ? 'Seleccionar...' : 'Select...'}</option>
+              <option value="basico">{lang === 'es' ? 'Básico' : 'Basic'}</option>
+              <option value="intermedio">{lang === 'es' ? 'Intermedio' : 'Intermediate'}</option>
+              <option value="avanzado">{lang === 'es' ? 'Avanzado' : 'Advanced'}</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="tags" style="display:block;margin-bottom:0.3rem;font-size:0.9rem;color:var(--muted);">
+              {lang === 'es' ? 'Etiquetas' : 'Tags'}
+            </label>
+            <input
+              type="text"
+              id="tags"
+              name="tags"
+              placeholder={lang === 'es' ? 'ej: fundamentos;modelo;empresa' : 'e.g: fundamentals;model;enterprise'}
+              style="width:100%;padding:0.6rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg);color:var(--text);font-size:0.9rem;"
+            />
+            <small style="color:var(--muted);font-size:0.8rem;">
+              {lang === 'es' ? 'Separar con punto y coma' : 'Separate with semicolons'}
+            </small>
+          </div>
+        </div>
+
+        <!-- Spanish Fields -->
+        <fieldset style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem;margin:0;">
+          <legend style="color:var(--accent);font-weight:600;padding:0 0.5rem;">
+            {lang === 'es' ? 'Información en Español*' : 'Spanish Information*'}
+          </legend>
+
+          <div style="display:flex;flex-direction:column;gap:0.8rem;">
+            <div>
+              <label for="term-es" style="display:block;margin-bottom:0.3rem;font-size:0.9rem;color:var(--muted);">
+                {lang === 'es' ? 'Término*' : 'Term*'}
+              </label>
+              <input
+                type="text"
+                id="term-es"
+                name="term_es"
+                required
+                placeholder={lang === 'es' ? 'ej: Inteligencia Artificial (IA)' : 'e.g: Inteligencia Artificial (IA)'}
+                style="width:100%;padding:0.6rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg);color:var(--text);font-size:0.9rem;"
+              />
+            </div>
+
+            <div>
+              <label for="short-es" style="display:block;margin-bottom:0.3rem;font-size:0.9rem;color:var(--muted);">
+                {lang === 'es' ? 'Definición corta*' : 'Short definition*'}
+              </label>
+              <textarea
+                id="short-es"
+                name="short_es"
+                required
+                rows="2"
+                placeholder={lang === 'es' ? 'Definición breve del término...' : 'Brief definition of the term...'}
+                style="width:100%;padding:0.6rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg);color:var(--text);font-size:0.9rem;resize:vertical;"
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="long-es" style="display:block;margin-bottom:0.3rem;font-size:0.9rem;color:var(--muted);">
+                {lang === 'es' ? 'Definición extendida*' : 'Extended definition*'}
+              </label>
+              <textarea
+                id="long-es"
+                name="long_es"
+                required
+                rows="3"
+                placeholder={lang === 'es' ? 'Definición más detallada del término...' : 'More detailed definition of the term...'}
+                style="width:100%;padding:0.6rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg);color:var(--text);font-size:0.9rem;resize:vertical;"
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="example-es" style="display:block;margin-bottom:0.3rem;font-size:0.9rem;color:var(--muted);">
+                {lang === 'es' ? 'Ejemplo' : 'Example'}
+              </label>
+              <textarea
+                id="example-es"
+                name="example_es"
+                rows="2"
+                placeholder={lang === 'es' ? 'Ejemplo práctico del uso del término...' : 'Practical example of term usage...'}
+                style="width:100%;padding:0.6rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg);color:var(--text);font-size:0.9rem;resize:vertical;"
+              ></textarea>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- English Fields -->
+        <fieldset style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem;margin:0;">
+          <legend style="color:var(--accent);font-weight:600;padding:0 0.5rem;">
+            {lang === 'es' ? 'Información en Inglés (opcional)' : 'English Information (optional)'}
+          </legend>
+
+          <div style="display:flex;flex-direction:column;gap:0.8rem;">
+            <div>
+              <label for="term-en" style="display:block;margin-bottom:0.3rem;font-size:0.9rem;color:var(--muted);">
+                {lang === 'es' ? 'Término' : 'Term'}
+              </label>
+              <input
+                type="text"
+                id="term-en"
+                name="term_en"
+                placeholder={lang === 'es' ? 'ej: Artificial Intelligence (AI)' : 'e.g: Artificial Intelligence (AI)'}
+                style="width:100%;padding:0.6rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg);color:var(--text);font-size:0.9rem;"
+              />
+            </div>
+
+            <div>
+              <label for="short-en" style="display:block;margin-bottom:0.3rem;font-size:0.9rem;color:var(--muted);">
+                {lang === 'es' ? 'Definición corta' : 'Short definition'}
+              </label>
+              <textarea
+                id="short-en"
+                name="short_en"
+                rows="2"
+                placeholder={lang === 'es' ? 'Definición breve en inglés...' : 'Brief definition in English...'}
+                style="width:100%;padding:0.6rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg);color:var(--text);font-size:0.9rem;resize:vertical;"
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="long-en" style="display:block;margin-bottom:0.3rem;font-size:0.9rem;color:var(--muted);">
+                {lang === 'es' ? 'Definición extendida' : 'Extended definition'}
+              </label>
+              <textarea
+                id="long-en"
+                name="long_en"
+                rows="3"
+                placeholder={lang === 'es' ? 'Definición detallada en inglés...' : 'Detailed definition in English...'}
+                style="width:100%;padding:0.6rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg);color:var(--text);font-size:0.9rem;resize:vertical;"
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="example-en" style="display:block;margin-bottom:0.3rem;font-size:0.9rem;color:var(--muted);">
+                {lang === 'es' ? 'Ejemplo' : 'Example'}
+              </label>
+              <textarea
+                id="example-en"
+                name="example_en"
+                rows="2"
+                placeholder={lang === 'es' ? 'Ejemplo práctico en inglés...' : 'Practical example in English...'}
+                style="width:100%;padding:0.6rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg);color:var(--text);font-size:0.9rem;resize:vertical;"
+              ></textarea>
+            </div>
+          </div>
+        </fieldset>
+
+        <button
+          type="submit"
+          style="padding:0.8rem 1.5rem;background:var(--accent);color:white;border:none;border-radius:var(--radius-sm);font-size:0.95rem;font-weight:600;cursor:pointer;transition:opacity 0.2s ease;"
+          onmouseover="this.style.opacity='0.9'"
+          onmouseout="this.style.opacity='1'"
+        >
+          {lang === 'es' ? 'Generar datos para Pull Request' : 'Generate Pull Request data'}
+        </button>
+      </form>
+
+      <!-- Result area -->
+      <div id="result-area" style="display:none;margin-top:1.5rem;padding:1rem;border-radius:var(--radius-sm);background:var(--bg);border:1px solid var(--border);">
+        <h3 style="margin:0 0 1rem;font-size:1rem;color:var(--accent);">
+          {lang === 'es' ? 'Datos generados para el Pull Request' : 'Generated Pull Request data'}
+        </h3>
+
+        <div style="margin-bottom:1rem;">
+          <label style="display:block;margin-bottom:0.3rem;font-size:0.9rem;color:var(--muted);">
+            {lang === 'es' ? 'Línea CSV para agregar a data/glossary.csv:' : 'CSV line to add to data/glossary.csv:'}
+          </label>
+          <textarea
+            id="csv-output"
+            readonly
+            rows="3"
+            style="width:100%;padding:0.6rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg-alt);color:var(--text);font-size:0.85rem;font-family:monospace;resize:vertical;"
+          ></textarea>
+          <button
+            type="button"
+            onclick="copyToClipboard('csv-output')"
+            style="margin-top:0.5rem;padding:0.4rem 0.8rem;background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent);border-radius:var(--radius-sm);font-size:0.8rem;cursor:pointer;"
+          >
+            {lang === 'es' ? 'Copiar CSV' : 'Copy CSV'}
+          </button>
+        </div>
+
+        <div style="margin-bottom:1rem;">
+          <label style="display:block;margin-bottom:0.3rem;font-size:0.9rem;color:var(--muted);">
+            {lang === 'es' ? 'Descripción del Pull Request:' : 'Pull Request description:'}
+          </label>
+          <textarea
+            id="pr-description"
+            readonly
+            rows="8"
+            style="width:100%;padding:0.6rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg-alt);color:var(--text);font-size:0.85rem;resize:vertical;"
+          ></textarea>
+          <button
+            type="button"
+            onclick="copyToClipboard('pr-description')"
+            style="margin-top:0.5rem;padding:0.4rem 0.8rem;background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent);border-radius:var(--radius-sm);font-size:0.8rem;cursor:pointer;"
+          >
+            {lang === 'es' ? 'Copiar descripción' : 'Copy description'}
+          </button>
+        </div>
+
+        <div style="padding:1rem;background:var(--accent-soft);border-radius:var(--radius-sm);border:1px solid var(--accent);">
+          <h4 style="margin:0 0 0.5rem;font-size:0.9rem;color:var(--accent);">
+            {lang === 'es' ? 'Próximos pasos:' : 'Next steps:'}
+          </h4>
+          <ol style="margin:0;padding-left:1.2rem;font-size:0.85rem;color:var(--text);">
+            <li>{lang === 'es' ? 'Copia la línea CSV de arriba' : 'Copy the CSV line above'}</li>
+            <li>
+              {lang === 'es' 
+                ? 'Haz fork del repositorio: ' 
+                : 'Fork the repository: '}
+              <a href={SITE_CONFIG.github.forkUrl} target="_blank" rel="noopener noreferrer">
+                {SITE_CONFIG.github.forkUrl}
+              </a>
+            </li>
+            <li>{lang === 'es' ? 'Edita el archivo data/glossary.csv y agrega la nueva línea al final' : 'Edit the data/glossary.csv file and add the new line at the end'}</li>
+            <li>{lang === 'es' ? 'Crea un Pull Request usando la descripción generada' : 'Create a Pull Request using the generated description'}</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Make functions globally accessible for inline onclick handlers
+      window.copyToClipboard = function(elementId) {
+        const element = document.getElementById(elementId);
+        const text = element.value || element.textContent;
+
+        // Show feedback
+        const button = event.target;
+        const originalText = button.textContent;
+
+        // Use modern Clipboard API if available, fallback to execCommand
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(() => {
+            button.textContent = button.textContent.includes('Copy') ? 'Copied!' : '¡Copiado!';
+            setTimeout(() => {
+              button.textContent = originalText;
+            }, 2000);
+          }).catch(() => {
+            // Fallback to execCommand if clipboard API fails
+            window.fallbackCopy(element, button, originalText);
+          });
+        } else {
+          // Fallback for older browsers or non-secure contexts
+          window.fallbackCopy(element, button, originalText);
+        }
+      };
+
+      window.fallbackCopy = function(element, button, originalText) {
+        try {
+          element.select();
+          element.setSelectionRange(0, 99999); // For mobile devices
+          document.execCommand('copy');
+          button.textContent = button.textContent.includes('Copy') ? 'Copied!' : '¡Copiado!';
+          setTimeout(() => {
+            button.textContent = originalText;
+          }, 2000);
+        } catch (err) {
+          console.error('Failed to copy text: ', err);
+          button.textContent = button.textContent.includes('Copy') ? 'Copy failed' : 'Error al copiar';
+          setTimeout(() => {
+            button.textContent = originalText;
+          }, 2000);
+        }
+      };
+
+      document.getElementById('term-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData.entries());
+
+        // Validate required fields
+        const requiredFields = ['id', 'section', 'level', 'term_es', 'short_es', 'long_es'];
+        const missingFields = requiredFields.filter(field => !data[field] || data[field].trim() === '');
+
+        if (missingFields.length > 0) {
+          alert('Please fill in all required fields: ' + missingFields.join(', '));
+          return;
+        }
+
+        // Validate ID format
+        if (!/^[a-z0-9_]+$/.test(data.id)) {
+          alert('ID must contain only lowercase letters, numbers, and underscores');
+          return;
+        }
+
+        // Generate current date
+        const today = new Date().toISOString().split('T')[0];
+
+        // Determine status based on English fields
+        const hasEnglish = data.term_en && data.short_en && data.long_en && data.example_en;
+        const status = hasEnglish ? 'activo' : 'revisar';
+
+        // Generate CSV line - helper function to properly escape CSV fields
+        function escapeCsvField(value) {
+          if (!value) return '';
+          // If the field contains commas, quotes, or newlines, wrap in quotes and escape internal quotes
+          if (value.includes(',') || value.includes('"') || value.includes('\n') || value.includes('\r')) {
+            return `"${value.replace(/"/g, '""')}"`;
+          }
+          return value;
+        }
+
+        const csvFields = [
+          data.id,
+          data.section,
+          data.tags ? `"${data.tags}"` : '',
+          `"${data.level}"`,
+          `"${status}"`,
+          '1', // version
+          today, // created_at
+          today, // updated_at
+          escapeCsvField(data.term_es || ''),
+          escapeCsvField(data.short_es || ''),
+          escapeCsvField(data.long_es || ''),
+          escapeCsvField(data.example_es || ''),
+          escapeCsvField(data.term_en || ''),
+          escapeCsvField(data.short_en || ''),
+          escapeCsvField(data.long_en || ''),
+          escapeCsvField(data.example_en || ''),
+        ];
+
+        const csvLine = csvFields.join(',');
+
+        // Generate PR description
+        const lang = new URLSearchParams(window.location.search).get('lang') || 'es';
+        const isSpanish = lang === 'es';
+
+        const prDescription = `# Pull Request — GlossarIA
+
+${isSpanish ? 'Gracias por contribuir' : 'Thank you for contributing'} 💙  
+${isSpanish ? 'Por favor completa la lista de verificación a continuación.' : 'Please complete the checklist below.'}
+
+---
+
+## 1. ${isSpanish ? '¿Qué hace este PR?' : 'What does this PR do?'}
+
+- [x] ${isSpanish ? 'Agregar nuevo(s) término(s)' : 'Add new term(s)'}  
+- [ ] ${isSpanish ? 'Actualizar término(s) existente(s)' : 'Update existing term(s)'}  
+- [ ] ${isSpanish ? 'Corregir traducciones' : 'Fix translations'}  
+- [ ] ${isSpanish ? 'Mejorar scripts' : 'Improve scripts'}  
+- [ ] ${isSpanish ? 'Mejorar sitio web' : 'Improve website'}  
+- [ ] ${isSpanish ? 'Otro' : 'Other'}  
+
+${isSpanish ? 'Resumen breve (requerido):' : 'Short summary (required):'}
+
+> ${isSpanish ? 'Agregar el término' : 'Add the term'} "${data.term_es}" ${isSpanish ? 'al glosario.' : 'to the glossary.'}
+
+---
+
+## 2. ${isSpanish ? 'Cambios en' : 'Changes in'} \`data/glossary.csv\`
+
+- [x] ${isSpanish ? 'Nuevas filas agregadas' : 'New rows added'}  
+- [ ] ${isSpanish ? 'Filas existentes modificadas' : 'Existing rows modified'}  
+- [ ] ${isSpanish ? 'Sin cambios en CSV' : 'No CSV changes'}  
+
+${isSpanish ? 'Si el CSV fue modificado, especificar:' : 'If CSV was modified, specify:'}
+
+- ${isSpanish ? 'IDs agregados/cambiados:' : 'IDs added/changed:'} ${data.id}
+- ${isSpanish ? 'Naturaleza del cambio:' : 'Nature of change:'} ${isSpanish ? 'Nuevo término agregado' : 'New term added'}
+
+---
+
+## 3. ${isSpanish ? 'Validación' : 'Validation'}
+
+- [ ] ${isSpanish ? 'Ejecuté' : 'I ran'} \`node scripts/validate-csv.js\`  
+- [ ] ${isSpanish ? 'CSV pasó la validación' : 'CSV passed validation'}  
+- [ ] ${isSpanish ? 'Estructura de columnas sin cambios' : 'Column structure unchanged'}  
+
+---
+
+## 4. ${isSpanish ? 'Idiomas' : 'Languages'}
+
+- [x] ${isSpanish ? 'Definiciones en español incluidas' : 'Spanish definitions included'}  
+- [${hasEnglish ? 'x' : ' '}] ${isSpanish ? 'Definiciones en inglés incluidas' : 'English definitions included'}  
+- [${hasEnglish ? ' ' : 'x'}] ${isSpanish ? 'Si falta inglés, status = revisar' : 'If English missing, status = revisar'}  
+
+---
+
+## 5. ${isSpanish ? 'Contexto adicional' : 'Additional context'}
+
+${isSpanish ? 'Término propuesto a través del formulario web de contribuciones.' : 'Term proposed through the web contribution form.'}
+
+${isSpanish ? 'Detalles del término:' : 'Term details:'}
+- ${isSpanish ? 'Sección:' : 'Section:'} ${data.section}
+- ${isSpanish ? 'Nivel:' : 'Level:'} ${data.level}
+- ${isSpanish ? 'Etiquetas:' : 'Tags:'} ${data.tags || isSpanish ? 'Ninguna' : 'None'}
+
+---
+
+${isSpanish ? 'Al enviar este PR, acepto el Código de Conducta.' : 'By submitting this PR, you agree to the Code of Conduct.'}`;
+
+        // Show results
+        document.getElementById('csv-output').value = csvLine;
+        document.getElementById('pr-description').value = prDescription;
+        document.getElementById('result-area').style.display = 'block';
+
+        // Scroll to results
+        document.getElementById('result-area').scrollIntoView({ behavior: 'smooth' });
+      });
+    </script>
+  </section>
+</Layout>

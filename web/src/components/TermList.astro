@@ -1,0 +1,19 @@
+---
+import TermCard from './TermCard.astro';
+import { t } from '../utils/translations';
+
+const { terms = [], lang = 'es' } = Astro.props as {
+  terms: any[];
+  lang: 'es' | 'en';
+};
+---
+
+<div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:0.5rem;">
+  {terms.length === 0 ? (
+    <p style="color:var(--muted);font-size:1rem;">
+      {t('noTermsFound', lang)}
+    </p>
+  ) : (
+    terms.map((t) => <TermCard term={t} lang={lang} />)
+  )}
+</div>

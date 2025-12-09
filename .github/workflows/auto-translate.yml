@@ -1,0 +1,41 @@
+name: Auto-translate glossary (DeepL)
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches:
+      - main
+    paths:
+      - "data/glossary.csv"
+
+jobs:
+  auto-translate:
+    runs-on: ubuntu-latest
+
+    env:
+      DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install dependencies in scripts directory
+        run: |
+          cd scripts
+          npm ci
+
+      - name: Run translation script
+        run: node scripts/translate-deepl.js
+
+      - name: Create Pull Request with updated translations
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore: auto-translate new or updated EN entries"
+          title: "Auto-translation update"
+          body: "This PR was generated automatically after detecting new or updated Spanish entries."
+          branch: "chore/auto-translate"

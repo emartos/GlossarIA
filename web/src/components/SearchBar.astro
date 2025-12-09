@@ -1,0 +1,35 @@
+---
+import { t } from '../utils/translations';
+
+const { lang = 'es', query = '', level = '' } = Astro.props;
+---
+
+<form
+  method="GET"
+  style="display:flex;flex-wrap:wrap;gap:0.6rem;align-items:center;margin-bottom:1rem;"
+>
+  <input type="hidden" name="lang" value={lang} />
+  <input
+    type="search"
+    name="q"
+    value={query}
+    placeholder={t('searchPlaceholder', lang)}
+    style="flex:1;min-width:200px;padding:0.55rem 0.7rem;border-radius:999px;border:1px solid var(--border);background:var(--bg-alt);color:var(--text);font-size:0.9rem;outline:none;"
+  />
+  <select
+    name="level"
+    value={level}
+    style="padding:0.5rem 0.7rem;border-radius:999px;border:1px solid var(--border);background:var(--bg-alt);color:var(--text);font-size:0.85rem;"
+  >
+    <option value="">{t('levelAny', lang)}</option>
+    <option value="basico">{t('levelBasic', lang)}</option>
+    <option value="intermedio">{t('levelIntermediate', lang)}</option>
+    <option value="avanzado">{t('levelAdvanced', lang)}</option>
+  </select>
+  <button
+    type="submit"
+    style="padding:0.5rem 0.9rem;border-radius:999px;border:1px solid var(--accent);background:var(--accent-soft);color:var(--text);font-size:0.85rem;cursor:pointer;"
+  >
+    {t('searchButton', lang)}
+  </button>
+</form>
