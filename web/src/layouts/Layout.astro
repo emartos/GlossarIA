@@ -83,6 +83,7 @@ const { title = 'GlossarIA', lang = 'en' } = Astro.props;
         display: flex;
         flex-direction: column;
         transition: background 0.3s ease, color 0.3s ease;
+        overflow-x: hidden;
       }
 
       main {
@@ -212,6 +213,20 @@ const { title = 'GlossarIA', lang = 'en' } = Astro.props;
         }
         main {
           padding-inline: 1rem;
+        }
+        .brand-sub {
+          display: none;
+        }
+        nav {
+          gap: 0.5rem;
+        }
+        nav a {
+          padding: 0.25rem 0.4rem;
+          font-size: 0.85rem;
+        }
+        /* Hide Glossary link on mobile as Logo serves same purpose */
+        nav a[href^="/?"] {
+          display: none;
         }
       }
     </style>
