@@ -9,6 +9,8 @@ services:
       - HOST=0.0.0.0
       - PORT=4321
     command: sh -c "cd web && node dist/server/entry.mjs"
+    volumes:
+      - ./web/dist:/app/web/dist
 
   glossaria-build:
     build: .
@@ -26,3 +28,7 @@ services:
       && echo '✅ Project built successfully inside container'"
     profiles:
       - build
+    volumes:
+      - ./web/dist:/app/web/dist
+      - ./web/public/data:/app/web/public/data
+      - ./data:/app/data
