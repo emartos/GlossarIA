@@ -146,6 +146,34 @@ The glossary is organized into the following sections:
 - **intermedio**: Intermediate level concepts
 - **avanzado**: Advanced level concepts
 
+## Deployment
+
+### Production Deployment (Recommended)
+
+The project includes an automated deployment script that handles the entire process (pulling changes, validating data, generating JSON files, and building the site).
+
+```bash
+# Run the auto-deploy script
+./scripts/auto-deploy.sh
+```
+
+### Manual Deployment
+
+If you prefer to run the steps manually:
+
+1.  **Validate Data**: Ensure the CSV has no errors.
+    ```bash
+    make validate
+    ```
+2.  **Generate JSON**: Update the web data from the CSV.
+    ```bash
+    make generate
+    ```
+3.  **Build**: Create the production-ready web application.
+    ```bash
+    make build
+    ```
+
 ## Contributing
 
 You can propose:
