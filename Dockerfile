@@ -16,6 +16,9 @@ COPY . .
 # Install dependencies
 RUN cd web && npm install && cd ../scripts && npm install
 
+# Generate JSON data from CSV before building the web app
+RUN cd scripts && node generate-json.js
+
 # Build the web application for production
 RUN cd web && npm run build
 
