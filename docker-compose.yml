@@ -9,8 +9,8 @@ services:
       - HOST=0.0.0.0
       - PORT=4321
     command: sh -c "cd web && node dist/server/entry.mjs"
-    volumes:
-      - ./web/dist:/app/web/dist
+    # En producción usamos el contenido de la imagen generada por el build
+    # Los volúmenes se mantienen solo para el servicio de build para persistir resultados si se desea
 
   glossaria-build:
     build: .
@@ -29,6 +29,7 @@ services:
     profiles:
       - build
     volumes:
-      - ./web/dist:/app/web/dist
+      - ./web/dist/server:/app/web/dist/server
+      - ./web/dist/client:/app/web/dist/client
       - ./web/public/data:/app/web/public/data
       - ./data:/app/data
