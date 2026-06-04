@@ -1548,5 +1548,81 @@
     "short": "Contenido generado automáticamente de baja calidad, repetitivo, genérico o sin valor real que inunda webs, redes sociales y documentos.",
     "long": "Contenido generado automáticamente de baja calidad, repetitivo, genérico o sin valor real que inunda webs, redes sociales y documentos.",
     "example": "Artículos de 800 palabras rellenos de frases vacías creadas por LLMs para posicionar SEO sin aportar nada útil."
+  },
+  {
+    "id": "skill",
+    "section": "aplicaciones_herramientas",
+    "tags": [
+      "agentes",
+      "herramientas",
+      "capacidades"
+    ],
+    "level": "intermedio",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2026-06-04",
+    "updated_at": "2026-06-04",
+    "language": "es",
+    "term": "Skill (Habilidad/Capacidad)",
+    "short": "Función o capacidad específica que un agente de IA puede ejecutar para realizar una tarea.",
+    "long": "Función o capacidad específica que un agente de IA puede ejecutar para realizar una tarea. Representa un conjunto de instrucciones o herramientas que permiten al agente interactuar con el mundo exterior o procesar información de forma especializada.",
+    "example": "Una «skill» de búsqueda en calendario que permite a un agente verificar disponibilidad y programar reuniones."
+  },
+  {
+    "id": "mcp",
+    "section": "fundamentos",
+    "tags": [
+      "estandar",
+      "datos",
+      "herramientas"
+    ],
+    "level": "avanzado",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2026-06-04",
+    "updated_at": "2026-06-04",
+    "language": "es",
+    "term": "MCP (Model Context Protocol)",
+    "short": "Protocolo abierto que estandariza cómo los modelos de IA se conectan con fuentes de datos y herramientas.",
+    "long": "Protocolo abierto que estandariza cómo los modelos de IA se conectan con fuentes de datos y herramientas locales o remotas, permitiendo que diferentes aplicaciones y modelos intercambien información de contexto de manera uniforme.",
+    "example": "Conectar un IDE de programación a una base de datos propia a través de MCP para que la IA pueda consultar esquemas de tablas."
+  },
+  {
+    "id": "reasoning_model",
+    "section": "modelos_arquitecturas",
+    "tags": [
+      "razonamiento",
+      "llm",
+      "complejidad"
+    ],
+    "level": "avanzado",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2026-06-04",
+    "updated_at": "2026-06-04",
+    "language": "es",
+    "term": "Modelo de razonamiento (Reasoning Model)",
+    "short": "Modelo de IA diseñado para «pensar» antes de responder, descomponiendo problemas complejos en pasos lógicos.",
+    "long": "Modelo de IA diseñado para «pensar» antes de responder, utilizando técnicas como la cadena de pensamiento (Chain of Thought) para descomponer problemas complejos en pasos lógicos internos antes de ofrecer una respuesta final.",
+    "example": "Un modelo que resuelve un problema matemático avanzado detallando cada paso lógico antes de dar el resultado."
+  },
+  {
+    "id": "agentic_workflow",
+    "section": "aplicaciones_herramientas",
+    "tags": [
+      "agentes",
+      "procesos",
+      "automatizacion"
+    ],
+    "level": "avanzado",
+    "status": "activo",
+    "version": 1,
+    "created_at": "2026-06-04",
+    "updated_at": "2026-06-04",
+    "language": "es",
+    "term": "Flujo de trabajo agéntico (Agentic Workflow)",
+    "short": "Patrón de diseño donde la IA itera, busca herramientas y reflexiona para completar una tarea.",
+    "long": "Patrón de diseño en el que la IA no genera una respuesta en un solo paso, sino que sigue un ciclo de planificación, ejecución con herramientas, reflexión sobre los resultados y corrección hasta completar la tarea.",
+    "example": "Un flujo donde un agente escribe código, lo intenta ejecutar, analiza el error, busca documentación y corrige el código de forma autónoma."
   }
 ]
