@@ -1,6 +1,7 @@
 services:
   glossaria:
     build: .
+    image: glossaria
     container_name: glossaria-app
     ports:
       - "4321:4321"
