@@ -9,6 +9,8 @@ services:
       - HOST=0.0.0.0
       - PORT=4321
     command: sh -c "cd web && node dist/server/entry.mjs"
+    volumes:
+      - ./data:/app/data
     # En producción usamos el contenido de la imagen generada por el build
     # Los volúmenes se mantienen solo para el servicio de build para persistir resultados si se desea
 
