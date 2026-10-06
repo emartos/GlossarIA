@@ -1,6 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import LangSwitcher from '../components/LangSwitcher.astro';
+import Layout from '../../layouts/Layout.astro';
+import LangSwitcher from '../../components/LangSwitcher.astro';
 
 const url = new URL(Astro.request.url);
 const lang = (url.searchParams.get('lang') ?? 'es') as 'es' | 'en';

@@ -31,7 +31,5 @@ services:
     profiles:
       - build
     volumes:
-      - ./web/dist/server:/app/web/dist/server
-      - ./web/dist/client:/app/web/dist/client
+      - ./web/dist:/app/web/dist
       - ./web/public/data:/app/web/public/data
-      - ./data:/app/data
